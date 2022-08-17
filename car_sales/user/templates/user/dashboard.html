@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="{% url 'contact-us' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit">Submit Query</button class="btn btn-primary">
+</form>
+<ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Query ID</th>
+                <th scope="col">Image</th>
+                <th scope="col">Query</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for query in queries %}
+                <tr>
+                    <td>{{ query.id }}</td>
+                    <td>
+                        <img src="{{ query.car_image.url }}" alt="{{ query.id }}">
+                    </td>
+                    <td>{{ query.query }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</ul>
+{% endblock content %}

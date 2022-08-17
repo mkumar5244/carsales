@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+<form action="{% url 'contact-us' %}" method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p|crispy }}
+    <button class="btn btn-primary" type="submit">Submit Query</button class="btn btn-primary">
+</form>
+{% endblock content %}

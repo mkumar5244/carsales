@@ -4,7 +4,7 @@
 {% block content %}
 <form action="{% url 'user:register' %}" method="post">
     {% csrf_token %}
-    {{ form.as_p|crispy }}
+    {{ form.as_p }}
     <button class="btn btn-primary" type="submit">Register</button class="btn btn-primary">
 </form>
 {% endblock content %}

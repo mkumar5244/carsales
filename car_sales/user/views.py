@@ -33,7 +33,7 @@ class LoginView(View):
             return redirect('user:dashboard')
         else:
             messages.error(request, 'Invalid credentials')
-            return render(request, 'login.html', context={'form':self.form({'username':username})})
+            return render(request, 'login.html', context={'form':self.form()})
 
 class LogoutView(View):
 

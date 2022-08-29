@@ -24,5 +24,5 @@ REGISTER PAGE - --![4register](https://user-images.githubusercontent.com/4308754
 Technologies - 
 ● Frontend - HTML, CSS
 ● Backend - Python
-● Database - MySQL
+● Database - MySQL Lite
 
